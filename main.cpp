@@ -46,6 +46,7 @@ public:
 		else { 
 			students[numberOfStudents] = name;
 		}
+		cout << "Added Student: " << name << endl;
 		numberOfStudents++;
 	}
 	void dropStudent(string name) {
@@ -57,6 +58,7 @@ public:
 				j++;
 			}
 			else { //if it is the name we want to remove decrease the num of students and dont copy it over
+				cout << "Dropped Student: " << name << "\n\n";
 				numberOfStudents--;
 			}
 		}
@@ -74,9 +76,11 @@ private:
 };
 
 void printStudents(Student math,string* students) {
+	cout << "Printing out all the students:\n";
 	for (int i = 0; i < math.getNumberOfStudents(); i++) {
 		cout << students[i] << endl;
 	}
+	cout << endl;
 }
 int main()
 {
@@ -86,7 +90,7 @@ int main()
 
 	string* students = math.getStudents();
 
-	cout << math.getCourseName() << " " << math.getNumberOfStudents() << endl;
+	cout << endl << math.getCourseName() << " " << math.getNumberOfStudents() << "\n\n";
 
 	printStudents(math, students); //print out the students
 	math.dropStudent("Apple"); //drop the student "Apple"
